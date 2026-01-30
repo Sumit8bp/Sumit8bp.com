@@ -1,158 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SUMIT 8BP STORE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMIT 8BP STORE - Gaming & Billiards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: white;
-  background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d1') no-repeat center fixed;
-  background-size: cover;
-}
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-/* Overlay for dark effect */
-.overlay {
-  background: rgba(0,0,0,0.8);
-  min-height: 100vh;
-  padding-bottom: 50px;
-}
+        /* Header & Navigation */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #00eeff;
+            box-shadow: 0 5px 20px rgba(0, 238, 255, 0.3);
+        }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 20px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #00ffcc;
-  text-shadow: 0 0 10px #00ffcc;
-}
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-/* Category Section */
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px;
-}
+        .logo {
+            text-align: center;
+            margin-bottom: 10px;
+        }
 
-.cat-box {
-  background: #111;
-  border: 2px solid #00ffcc;
-  border-radius: 10px;
-  width: 200px;
-  margin: 10px;
-  padding: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px #00ffcc;
-}
+        .logo h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #00eeff, #ff00cc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(0, 238, 255, 0.7);
+            letter-spacing: 2px;
+            margin-top: 80px;
+        }
 
-.cat-box img {
-  width: 100%;
-  border-radius: 8px;
-}
+        .logo p {
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-top: -5px;
+            letter-spacing: 1.5px;
+        }
 
-/* Items Section */
-.items {
-  margin: 30px;
-  text-align: center;
-}
+        /* Main Banner */
+        .banner {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1595435934247-5d33b7f92c70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+            border-bottom: 5px solid #ff00cc;
+            position: relative;
+            overflow: hidden;
+        }
 
-.item-box {
-  display: inline-block;
-  background: #111;
-  border: 1px solid #ff00ff;
-  padding: 10px;
-  margin: 8px;
-  width: 150px;
-  border-radius: 8px;
-}
+        .banner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=30');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            mix-blend-mode: overlay;
+        }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: black;
-  margin-top: 40px;
-  font-size: 16px;
-}
+        /* Categories Section */
+        .categories {
+            padding: 60px 0;
+            text-align: center;
+        }
 
-/* WhatsApp Floating Button */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 24px;
-  text-decoration: none;
-  box-shadow: 0 0 10px #25D366;
-}
-</style>
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #00eeff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff00cc, transparent);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background: rgba(30, 30, 46, 0.8);
+            border-radius: 15px;
+            padding: 30px 20px;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            border-color: #00eeff;
+            box-shadow: 0 15px 30px rgba(0, 238, 255, 0.3);
+        }
+
+        .category-img {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: rgba(0, 238, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: #00eeff;
+            border: 3px solid #00eeff;
+        }
+
+        .category-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .category-card p {
+            color: #aaa;
+            font-size: 1rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: rgba(10, 10, 15, 0.9);
+            border-top: 2px solid #ff00cc;
+            border-bottom: 2px solid #ff00cc;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: rgba(40, 40, 60, 0.8);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            border-color: #ff00cc;
+            box-shadow: 0 15px 30px rgba(255, 0, 204, 0.2);
+        }
+
+        .product-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #00eeff;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .product-content p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        /* Footer & Contact */
+        footer {
+            background: rgba(5, 5, 10, 0.98);
+            padding: 60px 0 30px;
+            border-top: 3px solid #00eeff;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #00eeff;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 238, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #00eeff;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.7);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.9);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 2.5rem;
+                margin-top: 60px;
+            }
+            
+            .categories-grid, .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                font-size: 32px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SUMIT 8BP STORE</h1>
+                <p>Premium Gaming & Billiards Items</p>
+            </div>
+        </div>
+    </header>
 
-<div class="overlay">
+    <!-- Main Banner -->
+    <section class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1 style="font-size: 3.5rem; font-family: 'Orbitron', sans-serif; text-align: center;">LEVEL UP YOUR GAME</h1>
+                <p style="font-size: 1.5rem; text-align: center; margin-top: 20px; max-width: 800px;">Get premium coins, cash, accounts, and pool passes for the ultimate gaming experience</p>
+            </div>
+        </div>
+    </section>
 
-<header>🎱 SUMIT 8BP STORE 🎱</header>
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">SHOP BY CATEGORY</h2>
+            <div class="categories-grid">
+                <!-- COINS -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>COINS</h3>
+                    <p>Purchase game coins to unlock premium features and items</p>
+                </div>
+                
+                <!-- CASH -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>CASH</h3>
+                    <p>Get in-game cash for transactions and special purchases</p>
+                </div>
+                
+                <!-- ACCOUNT -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>ACCOUNT</h3>
+                    <p>Premium accounts with exclusive items and higher levels</p>
+                </div>
+                
+                <!-- POOL PASS -->
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>POOL PASS</h3>
+                    <p>Season passes with exclusive rewards and benefits</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2 style="text-align:center;">Buy 8 Ball Pool Items Cheap & Fast</h2>
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">PREMIUM ITEMS</h2>
+            <div class="products-grid">
+                <!-- Cues -->
+                <div class="product-card">
+                    <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1611591437281-8a5d5c7b98b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="product-content">
+                        <h3>Cues</h3>
+                        <p>Exclusive and premium cues with special effects and enhanced accuracy</p>
+                    </div>
+                </div>
+                
+                <!-- Avatar -->
+                <div class="product-card">
+                    <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="product-content">
+                        <h3>Avatar</h3>
+                        <p>Custom avatars to stand out in the game with unique styles</p>
+                    </div>
+                </div>
+                
+                <!-- Emoji -->
+                <div class="product-card">
+                    <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1611605698335-8b1569810435?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="product-content">
+                        <h3>Emoji</h3>
+                        <p>Expressive emojis for better in-game communication</p>
+                    </div>
+                </div>
+                
+                <!-- Rings -->
+                <div class="product-card">
+                    <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1594576722517-5c7c6c6e8b3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="product-content">
+                        <h3>Rings</h3>
+                        <p>Special effects rings that display during gameplay</p>
+                    </div>
+                </div>
+                
+                <!-- Winnings -->
+                <div class="product-card">
+                    <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="product-content">
+                        <h3>Winnings</h3>
+                        <p>Boost your winnings with special multipliers and bonuses</p>
+                    </div>
+                </div>
+                
+                <!-- Legendary Boxes -->
+                <div class="product-card">
+                    <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="product-content">
+                        <h3>Legendary Boxes</h3>
+                        <p>Mystery boxes containing rare and legendary items</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Categories -->
-<div class="categories">
+    <!-- Footer & Contact -->
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <h3>CONTACT US</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <p><strong>WhatsApp</strong></p>
+                            <p>+91-7988942622</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p><strong>Email</strong></p>
+                            <p>sumit8bp16@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <p style="max-width: 600px; margin: 0 auto; color: #aaa;">Contact us directly on WhatsApp for quick orders and support. We're available 24/7 to assist you with your gaming needs.</p>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 SUMIT 8BP STORE. All Rights Reserved.</p>
+                <p>Professional Gaming & Billiards Items Store</p>
+            </div>
+        </div>
+    </footer>
 
-<div class="cat-box">
-<img src="https://i.imgur.com/8Q1Zb1K.png">
-<h3>COINS</h3>
-</div>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/917988942622?text=Hello%20SUMIT%208BP%20STORE%2C%20I%20would%20like%20to%20purchase%20some%20items" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-<div class="cat-box">
-<img src="https://i.imgur.com/8Q1Zb1K.png">
-<h3>CASH</h3>
-</div>
+    <script>
+        // Add smooth scrolling to page sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
-<div class="cat-box">
-<img src="https://i.imgur.com/8Q1Zb1K.png">
-<h3>ACCOUNT</h3>
-</div>
+        // Add animation to category cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-<div class="cat-box">
-<img src="https://i.imgur.com/8Q1Zb1K.png">
-<h3>POOL PASS</h3>
-</div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-</div>
+        // Observe category cards
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
 
-<!-- Scroll Items -->
-<div class="items">
-<h2>🔥 Store Items</h2>
-
-<div class="item-box">Cues</div>
-<div class="item-box">Avatar</div>
-<div class="item-box">Emoji</div>
-<div class="item-box">Rings</div>
-<div class="item-box">Winnings</div>
-<div class="item-box">Legendary Boxes</div>
-
-</div>
-
-<!-- Footer -->
-<footer>
-📞 WhatsApp: +91-7988942622 <br>
-📧 Email: sumit8bp16@gmail.com <br><br>
-© 2026 SUMIT 8BP STORE - Trusted Seller
-</footer>
-
-</div>
-
-<!-- WhatsApp Floating Icon -->
-<a class="whatsapp-btn" href="https://wa.me/917988942622" target="_blank">💬</a>
-
+        // Observe product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.9)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
