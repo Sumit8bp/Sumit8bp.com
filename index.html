@@ -1,83 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>SUMIT 8BP STORE</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUMIT 8BP STORE</title>
 
 <style>
-img {
-  border-radius: 50%;
-}
-
-  background: black;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
+body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d1') no-repeat center fixed;
+  background-size: cover;
 }
 
-<header>
-  <img src="logo.png" width="100"><br>
-  🎱 SUMIT 8BP STORE 🎱
-</header>
+/* Overlay for dark effect */
+.overlay {
+  background: rgba(0,0,0,0.8);
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
 
-  background: #00ff00;
-  color: black;
+/* Header */
+header {
+  text-align: center;
   padding: 20px;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc;
 }
 
-.product {
-  border: 2px solid #00ff00;
-  padding: 15px;
-  margin: 15px;
-  display: inline-block;
-  width: 220px;
+/* Category Section */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.cat-box {
   background: #111;
+  border: 2px solid #00ffcc;
+  border-radius: 10px;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px #00ffcc;
 }
 
-button {
-  background: #00ff00;
-  color: black;
-  border: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
+.cat-box img {
+  width: 100%;
+  border-radius: 8px;
 }
-button:hover {
-  background: yellow;
+
+/* Items Section */
+.items {
+  margin: 30px;
+  text-align: center;
+}
+
+.item-box {
+  display: inline-block;
+  background: #111;
+  border: 1px solid #ff00ff;
+  padding: 10px;
+  margin: 8px;
+  width: 150px;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #25D366;
 }
 </style>
 </head>
 
 <body>
 
+<div class="overlay">
+
 <header>🎱 SUMIT 8BP STORE 🎱</header>
 
-<h2>Buy 8 Ball Pool Cash & Gaming Items</h2>
-<p>Fast Delivery | Cheap Price | Trusted Seller</p>
+<h2 style="text-align:center;">Buy 8 Ball Pool Items Cheap & Fast</h2>
 
-<div class="product">
-  <h3>8 Ball Pool Cash</h3>
-  <p>Price: ₹99</p>
-  <button onclick="window.open('https://wa.me/91XXXXXXXXXX')">BUY NOW</button>
+<!-- Categories -->
+<div class="categories">
+
+<div class="cat-box">
+<img src="https://i.imgur.com/8Q1Zb1K.png">
+<h3>COINS</h3>
 </div>
 
-<div class="product">
-  <h3>8 Ball Pool Coins</h3>
-  <p>Price: ₹49</p>
-  <button onclick="window.open('https://wa.me/91XXXXXXXXXX')">BUY NOW</button>
+<div class="cat-box">
+<img src="https://i.imgur.com/8Q1Zb1K.png">
+<h3>CASH</h3>
 </div>
 
-<div class="product">
-  <h3>Gaming Accounts</h3>
-  <p>Price: ₹299</p>
-  <button onclick="window.open('https://wa.me/91XXXXXXXXXX')">BUY NOW</button>
+<div class="cat-box">
+<img src="https://i.imgur.com/8Q1Zb1K.png">
+<h3>ACCOUNT</h3>
 </div>
 
-<h3>Contact</h3>
-<p>WhatsApp: +91XXXXXXXXXX</p>
+<div class="cat-box">
+<img src="https://i.imgur.com/8Q1Zb1K.png">
+<h3>POOL PASS</h3>
+</div>
+
+</div>
+
+<!-- Scroll Items -->
+<div class="items">
+<h2>🔥 Store Items</h2>
+
+<div class="item-box">Cues</div>
+<div class="item-box">Avatar</div>
+<div class="item-box">Emoji</div>
+<div class="item-box">Rings</div>
+<div class="item-box">Winnings</div>
+<div class="item-box">Legendary Boxes</div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+📞 WhatsApp: +91-7988942622 <br>
+📧 Email: sumit8bp16@gmail.com <br><br>
+© 2026 SUMIT 8BP STORE - Trusted Seller
+</footer>
+
+</div>
+
+<!-- WhatsApp Floating Icon -->
+<a class="whatsapp-btn" href="https://wa.me/917988942622" target="_blank">💬</a>
 
 </body>
 </html>
