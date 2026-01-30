@@ -1026,3 +1026,764 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMIT 8BP STORE - Premium Gaming & Billiards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&family=Barlow:wght@400;500;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: linear-gradient(rgba(10, 10, 20, 0.95), rgba(10, 10, 20, 0.98)), 
+                        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(0, 238, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 70%, rgba(255, 0, 204, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 15, 25, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #ff0055;
+            box-shadow: 0 5px 25px rgba(255, 0, 85, 0.3);
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .logo h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #00eeff, #ff0055, #ffcc00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+            letter-spacing: 3px;
+            line-height: 1;
+            margin-top: 90px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #00eeff, #ff0055, #ffcc00);
+            border-radius: 3px;
+        }
+
+        .logo p {
+            font-size: 1.1rem;
+            color: #aaa;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 40px;
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 80px 0 40px;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #00eeff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff0055, transparent);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background: linear-gradient(145deg, rgba(30, 30, 50, 0.8), rgba(20, 20, 40, 0.9));
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #00eeff, #ff0055);
+        }
+
+        .category-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            border-color: #00eeff;
+            box-shadow: 0 20px 40px rgba(0, 238, 255, 0.3);
+        }
+
+        .category-img {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(0, 238, 255, 0.1), rgba(255, 0, 85, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #00eeff;
+            border: 3px solid #ff0055;
+            box-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+        }
+
+        .category-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+        }
+
+        .category-card p {
+            color: #ccc;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 25px;
+            min-height: 60px;
+        }
+
+        /* Buy Button */
+        .buy-btn {
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+            padding: 14px 0;
+            background: linear-gradient(90deg, #ff0055, #ff6600);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Exo 2', sans-serif;
+            box-shadow: 0 5px 15px rgba(255, 0, 85, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .buy-btn:hover {
+            background: linear-gradient(90deg, #ff0066, #ff8800);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 0, 85, 0.6);
+        }
+
+        .buy-btn:active {
+            transform: translateY(1px);
+        }
+
+        .buy-btn i {
+            margin-left: 8px;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: rgba(10, 10, 20, 0.7);
+            border-top: 2px solid #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+            margin: 40px 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: linear-gradient(145deg, rgba(40, 40, 60, 0.8), rgba(30, 30, 50, 0.9));
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #ffcc00;
+            box-shadow: 0 20px 40px rgba(255, 204, 0, 0.3);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ffcc00, #ff0055);
+        }
+
+        .product-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .product-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to top, rgba(30, 30, 50, 0.9), transparent);
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #ffcc00;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .product-content p {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            color: #00eeff;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .product-buy-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #00ccff, #0088ff);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Exo 2', sans-serif;
+            box-shadow: 0 5px 15px rgba(0, 204, 255, 0.4);
+            text-decoration: none;
+        }
+
+        .product-buy-btn:hover {
+            background: linear-gradient(90deg, #00ddff, #0099ff);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 204, 255, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(5, 5, 15, 0.98);
+            padding: 70px 0 30px;
+            border-top: 3px solid #00eeff;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #00eeff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #ff0055;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 15px;
+            color: #00eeff;
+            font-size: 1.3rem;
+            width: 30px;
+        }
+
+        .quick-links ul {
+            list-style: none;
+        }
+
+        .quick-links li {
+            margin-bottom: 12px;
+        }
+
+        .quick-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .quick-links a:hover {
+            color: #00eeff;
+            padding-left: 5px;
+        }
+
+        .quick-links i {
+            margin-right: 10px;
+            color: #ff0055;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.7);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 5px 25px rgba(37, 211, 102, 0.7); }
+            50% { box-shadow: 0 5px 25px rgba(37, 211, 102, 0.9), 0 0 0 10px rgba(37, 211, 102, 0.2); }
+            100% { box-shadow: 0 5px 25px rgba(37, 211, 102, 0.7); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.9);
+        }
+
+        .whatsapp-text {
+            position: absolute;
+            right: 80px;
+            background: rgba(15, 15, 25, 0.9);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: white;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border: 2px solid #25D366;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .logo h1 {
+                font-size: 2.8rem;
+                margin-top: 70px;
+            }
+            
+            .categories-grid, .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 2.2rem;
+                margin-top: 60px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .category-img {
+                width: 120px;
+                height: 120px;
+                font-size: 50px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                font-size: 32px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-text {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SUMIT 8BP STORE</h1>
+                <p>PREMIUM GAMING & BILLIARDS ITEMS</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">SHOP BY CATEGORY</h2>
+                <div class="categories-grid">
+                    <!-- COINS -->
+                    <div class="category-card">
+                        <div class="category-img">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>COINS</h3>
+                        <p>Purchase game coins to unlock premium features, items, and boost your gameplay</p>
+                        <button class="buy-btn" onclick="buyItem('Coins')">BUY NOW <i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                    
+                    <!-- CASH -->
+                    <div class="category-card">
+                        <div class="category-img">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>CASH</h3>
+                        <p>Get in-game cash for transactions, special purchases, and exclusive items</p>
+                        <button class="buy-btn" onclick="buyItem('Cash')">BUY NOW <i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                    
+                    <!-- ACCOUNT -->
+                    <div class="category-card">
+                        <div class="category-img">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <h3>ACCOUNT</h3>
+                        <p>Premium accounts with exclusive items, higher levels, and special privileges</p>
+                        <button class="buy-btn" onclick="buyItem('Account')">BUY NOW <i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                    
+                    <!-- POOL PASS -->
+                    <div class="category-card">
+                        <div class="category-img">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h3>POOL PASS</h3>
+                        <p>Season passes with exclusive rewards, benefits, and premium access</p>
+                        <button class="buy-btn" onclick="buyItem('Pool Pass')">BUY NOW <i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products">
+            <div class="container">
+                <h2 class="section-title">PREMIUM GAMING ITEMS</h2>
+                <div class="products-grid">
+                    <!-- Cues -->
+                    <div class="product-card">
+                        <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1611591437281-8a5d5c7b98b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                        <div class="product-content">
+                            <h3>Cues</h3>
+                            <p>Exclusive and premium cues with special effects, enhanced accuracy, and unique designs</p>
+                            <div class="product-price">Starting at ₹199</div>
+                            <a href="https://wa.me/917988942622?text=Hello%20SUMIT%208BP%20STORE%2C%20I%20want%20to%20buy%20CUES" class="product-buy-btn" target="_blank">BUY NOW</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Avatar -->
+                    <div class="product-card">
+                        <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                        <div class="product-content">
+                            <h3>Avatar</h3>
+                            <p>Custom avatars to stand out in the game with unique styles, animations, and effects</p>
+                            <div class="product-price">Starting at ₹149</div>
+                            <a href="https://wa.me/917988942622?text=Hello%20SUMIT%208BP%20STORE%2C%20I%20want%20to%20buy%20AVATAR" class="product-buy-btn" target="_blank">BUY NOW</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Emoji -->
+                    <div class="product-card">
+                        <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1611605698335-8b1569810435?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                        <div class="product-content">
+                            <h3>Emoji</h3>
+                            <p>Expressive emojis for better in-game communication with animated and premium packs</p>
+                            <div class="product-price">Starting at ₹99</div>
+                            <a href="https://wa.me/917988942622?text=Hello%20SUMIT%208BP%20STORE%2C%20I%20want%20to%20buy%20EMOJI" class="product-buy-btn" target="_blank">BUY NOW</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Rings -->
+                    <div class="product-card">
+                        <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1594576722517-5c7c6c6e8b3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                        <div class="product-content">
+                            <h3>Rings</h3>
+                            <p>Special effects rings that display during gameplay with stunning visual effects</p>
+                            <div class="product-price">Starting at ₹249</div>
+                            <a href="https://wa.me/917988942622?text=Hello%20SUMIT%208BP%20STORE%2C%20I%20want%20to%20buy%20RINGS" class="product-buy-btn" target="_blank">BUY NOW</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Winnings -->
+                    <div class="product-card">
+                        <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                        <div class="product-content">
+                            <h3>Winnings</h3>
+                            <p>Boost your winnings with special multipliers, bonuses, and premium boosters</p>
+                            <div class="product-price">Starting at ₹299</div>
+                            <a href="https://wa.me/917988942622?text=Hello%20SUMIT%208BP%20STORE%2C%20I%20want%20to%20buy%20WINNINGS" class="product-buy-btn" target="_blank">BUY NOW</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Legendary Boxes -->
+                    <div class="product-card">
+                        <div class="product-img" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+                        <div class="product-content">
+                            <h3>Legendary Boxes</h3>
+                            <p>Mystery boxes containing rare and legendary items with guaranteed rewards</p>
+                            <div class="product-price">Starting at ₹399</div>
+                            <a href="https://wa.me/917988942622?text=Hello%20SUMIT%208BP%20STORE%2C%20I%20want%20to%20buy%20LEGENDARY%20BOX" class="product-buy-btn" target="_blank">BUY NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section contact-info">
+                    <h3>CONTACT US</h3>
+                    <p><i class="fab fa-whatsapp"></i> +91-7988942622</p>
+                    <p><i class="fas fa-envelope"></i> sumit8bp16@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Available 24/7 for support</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Premium Gaming Store</p>
+                </div>
+                
+                <div class="footer-section quick-links">
+                    <h3>QUICK LINKS</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Coins</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cash</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Accounts</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Pool Pass</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> All Products</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ABOUT US</h3>
+                    <p style="color: #ccc; margin-bottom: 20px;">SUMIT 8BP STORE is your premier destination for premium gaming and billiards items. We provide the best in-game items with fast delivery and excellent customer support.</p>
+                    <p style="color: #00eeff; font-weight: 600;"><i class="fas fa-star"></i> Trusted by 5000+ Gamers</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 SUMIT 8BP STORE. All Rights Reserved.</p>
+                <p>Professional Gaming & Billiards Items Store | Premium Quality Guaranteed</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/917988942622?text=Hello%20SUMIT%208BP%20STORE%2C%20I%20would%20like%20to%20purchase%20some%20items" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat on WhatsApp</span>
+    </a>
+
+    <script>
+        // Buy item function
+        function buyItem(itemName) {
+            const message = `Hello SUMIT 8BP STORE, I want to buy ${itemName}. Please provide details.`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/917988942622?text=${encodedMessage}`, '_blank');
+        }
+
+        // Add animation to elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe category cards
+        document.querySelectorAll('.category-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Observe product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add some dynamic effect to buy buttons
+        document.querySelectorAll('.buy-btn, .product-buy-btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
